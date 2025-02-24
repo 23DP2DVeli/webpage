@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaķu Pasaule</title>
+  <link rel="stylesheet" href="src/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🐾</span> Kaķu Pasaule
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero" onclick="scrollToSection('hero')">Sākums</a></li>
+        <li><a href="#about" onclick="scrollToSection('about')">Par Kaķiem</a></li>
+        <li><a href="#mySection" onclick="scrollToSection('mySection')">Ņaudētājs</a></li>
+        <li><a href="#catFact" onclick="scrollToSection('catFact')">Kaķu Fakti</a></li>
+        <li><a href="#catQuiz" onclick="scrollToSection('catQuiz')">Kaķu viktorīna</a></li>
+        <li><a href="#catBreeds" onclick="scrollToSection('catBreeds')">Kaķu šķirņu filtrs</a></li>
+        <li><a href="#catGame" onclick="scrollToSection('catGame')">Spēle: Kaķu dārgumu meklēšana</a></li>
+        <li><a href="#catGambling" onclick="scrollToSection('catGambling')">Kaķu azartspēles</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="hero" class="section-hero">
+    <div class="hero-content">
+      <h1>Laipni lūdzam Kaķu Pasaulē!</h1>
+      <p>Izpēti kaķu burvību kopā ar dzijas kamoliņu!</p>
+      <img src="https://cataas.com/cat" alt="Kaķis" class="hero-cat" />
+    </div>
+    <div class="thread-ball"></div>
+  </section>
+
+
+  <section id="about" class="section-content">
+    <h2>Par Kaķiem</h2>
+    <p>Kaķi ir neatkarīgi un graciozi dzīvnieki, kas mīl gan gulēt (12-16 stundas dienā), gan medīt savu "laupījumu" - piemēram, dzijas kamoliņus!</p>
+    <p>Viņi spēj lēkt līdz 5 reizēm savam augumam un murrā, lai izrādītu prieku.</p>
+    <img src="https://cataas.com/cat/says/Meow" alt="Kaķis saka Ņau" class="cat-img" />
+  </section>
+
+
+  <section id="mySection" class="section-content">
+    <h2>Kaķu Ņaudētājs</h2>
+    <p>Spied pogu, lai kaķis ņaudētu un dalītos ar savu noskaņojumu!</p>
+    <button class="btn" onclick="playCatSound()">Ņau!</button>
+    <p id="message"></p>
+    <img src="https://cataas.com/cat/cute" alt="Mīlīgs kaķis" class="cat-img" />
+  </section>
+
+
+  <section id="catFact" class="section-content">
+    <h2>Kaķu Fakti</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="changeFact(-1)">◄</button>
+      <p id="catFactText">Nospied pogu, lai sāktu kaķu gudrību karuseli!</p>
+      <button class="carousel-btn next" onclick="changeFact(1)">►</button>
+    </div>
+    <img src="https://cataas.com/cat/says/Fact" alt="Kaķis ar faktu" class="cat-img" />
+  </section>
+
+
+  <section id="catQuiz" class="section-content">
+    <h2>Kaķu viktorīna</h2>
+    <p>Atbildi uz jautājumiem un uzzini savu kaķu zināšanu līmeni!</p>
+    <div id="quizContainer"></div>
+    <button class="btn" onclick="submitQuiz()">Iesniegt</button>
+    <p id="quizResult"></p>
+  </section>
+
+
+  <section id="catBreeds" class="section-content">
+    <h2>Kaķu šķirņu filtrs</h2>
+    <p>Izvēlies kaķu šķirni, lai uzzinātu vairāk!</p>
+    <select id="breedSelect" onchange="showBreedInfo()">
+      <option value="">Izvēlies šķirni</option>
+    </select>
+    <div id="breedInfo">
+      <p id="breedDescription"></p>
+      <img id="breedImage" src="" alt="Kaķu šķirne" class="cat-img" style="display: none;" />
+    </div>
+  </section>
+
+
+  <section id="catGame" class="section-content">
+    <h2>Spēle: Kaķu dārgumu meklēšana</h2>
+    <p>Atrast 5 kaķu dārgumus ar 15 gājieniem!</p>
+    <div id="gameArea" class="treasure-grid"></div>
+    <p id="movesLeft">Atlikušie gājieni: 15</p>
+    <p id="treasuresFound">Atrastie dārgumi: 0</p>
+    <button class="btn" onclick="startTreasureGame()">Sākt spēli</button>
+    <p id="gameResult"></p>
+    <img id="happyCat" src="https://cataas.com/cat/says/Happy" alt="Priecīgs kaķis" class="cat-img" style="display: none;" />
+  </section>
+
+
+  <section id="catGambling" class="section-content">
+    <h2>Kaķu azartspēles</h2>
+    <p>Liec likmi un griez kaķu slotus!</p>
+    <p id="catCoins">Kaķu monētas: 100</p>
+    <div class="slot-machine">
+      <div class="slot-window">
+        <div class="reel" id="reel1"><span>🐾</span></div>
+        <div class="reel" id="reel2"><span>🐱</span></div>
+        <div class="reel" id="reel3"><span>💎</span></div>
+      </div>
+    </div>
+    <div class="slot-controls">
+      <input type="number" id="betAmount" min="1" max="100" value="10" />
+      <button class="btn slot-btn" onclick="spinSlots()">Griezt</button>
+      <button class="btn instant-win-btn" onclick="instantWin()">Tūlītēja uzvara (50)</button>
+    </div>
+    <p id="slotResult"></p>
+    <img id="slotCat" src="https://cataas.com/cat" alt="Kaķis slotos" class="cat-img" style="display: none;" />
+  </section>
+
+
+  <footer id="footer">
+    <p>© 2025 Kaķu Pasaule. Visas tiesības aizsargātas.</p>
+    <p>Kontakti: <a href="mailto:kaķi@email.com">kaķi@email.com</a></p>
+    <button class="btn" id="purrToggle" onclick="togglePurr()">Ieslēgt Murrāšanu</button>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

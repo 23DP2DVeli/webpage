@@ -1,0 +1,391 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f7e9e9, #f0e6f5);
+  color: #4a3c5b;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  cursor: url(https://cdn.custom-cursor.com/db/7648/32/meme-pop-cat-cursor.png) , default !important
+
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/paw-print.png') repeat;
+  opacity: 0.1;
+  z-index: -1;
+  animation: pawDrift 30s infinite linear;
+}
+
+@keyframes pawDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 500px 500px; }
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d9c2e8;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid #f5d5e9;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  color: #8a5da5;
+}
+
+.logo-icon {
+  font-size: 32px;
+  margin-right: 8px;
+  animation: pawWiggle 2s infinite;
+}
+
+@keyframes pawWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: #8a5da5;
+  border-radius: 20px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: #6e468a;
+  transform: translateY(-2px);
+}
+
+
+.section-hero {
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  background: #fff6f9;
+  border-radius: 30px;
+  margin: 20px auto;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(138, 93, 165, 0.1);
+  overflow: hidden;
+}
+
+.hero-content h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  color: #8a5da5;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: #6e468a;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.hero-cat {
+  max-width: 350px;
+  border-radius: 50%;
+  border: 5px solid #f5d5e9;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thread-ball {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #f5d5e9 20%, #fff 60%);
+  border-radius: 50%;
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 5px 15px rgba(245, 213, 233, 0.5);
+}
+
+
+.section-content {
+  padding: 60px 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background: #fff6f9;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(138, 93, 165, 0.1);
+}
+
+.section-content h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  color: #8a5da5;
+  margin-bottom: 20px;
+}
+
+.section-content p {
+  font-size: 16px;
+  color: #6e468a;
+}
+
+
+.btn {
+  padding: 12px 30px;
+  background: #f5d5e9;
+  color: #8a5da5;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  background: #e8b8d8;
+  transform: scale(1.1);
+  cursor: url(https://cdn.custom-cursor.com/db/7647/32/meme-pop-cat-pointer.png)   , pointer !important
+}
+
+
+.cat-img {
+  max-width: 250px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 3px dashed #f5d5e9;
+}
+
+#message, #catFactText, #quizResult, #gameResult, #movesLeft, #treasuresFound, #catCoins, #slotResult {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #8a5da5;
+  font-style: italic;
+}
+
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.carousel-btn {
+  background: #d9c2e8;
+  color: #8a5da5;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  border: none;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: #c7a9d8;
+}
+
+
+#quizContainer {
+  margin: 20px 0;
+}
+
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.quiz-question label {
+  display: block;
+  margin: 10px 0;
+  color: #6e468a;
+}
+
+
+#breedSelect {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 2px solid #f5d5e9;
+  background: #fff;
+  color: #8a5da5;
+  margin-top: 15px;
+}
+
+#breedInfo {
+  margin-top: 20px;
+}
+
+
+.treasure-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 5px;
+  margin: 20px auto;
+  width: 310px;
+  justify-content: center;
+}
+
+.tile {
+  width: 60px;
+  height: 60px;
+  background: #f0e6f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tile:hover {
+  background: #e8b8d8;
+}
+
+.tile.revealed {
+  background: #d9c2e8;
+}
+
+.slot-machine {
+  margin: 20px auto;
+  background: linear-gradient(135deg, #8a5da5, #d9c2e8);
+  padding: 20px;
+  border-radius: 15px;
+  border: 5px solid #f5d5e9;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  width: 300px;
+}
+
+.slot-window {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #fff6f9;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #e8b8d8;
+  overflow: hidden;
+}
+
+.reel {
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #f5d5e9;
+}
+
+.reel span {
+  position: absolute;
+  transition: transform 0.1s ease-out;
+}
+
+.reel.spinning span {
+  animation: spinReel 1.5s ease-in-out infinite;
+}
+
+.slot-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#betAmount {
+  padding: 10px;
+  width: 80px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 2px solid #f5d5e9;
+  background: #fff;
+  color: #8a5da5;
+}
+
+.slot-btn {
+  background: #ff6f61;
+  color: white;
+  padding: 12px 40px;
+  font-size: 18px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+}
+
+.slot-btn:hover {
+  background: #e65b50;
+  transform: scale(1.05);
+}
+
+.instant-win-btn {
+  background: #ffd700;
+  color: #4a3c5b;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.instant-win-btn:hover {
+  background: #e6c200;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #d9c2e8;
+  color: #ffffff;
+  border-top: 3px solid #f5d5e9;
+}
+
+footer a {
+  color: #f5d5e9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #e8b8d8;
+}
+
+/* Slot animation */
+@keyframes spinReel {
+  0% { transform: translateY(200%); }
+  20% { transform: translateY(100%); }
+  40% { transform: translateY(0); }
+  60% { transform: translateY(-100%); }
+  80% { transform: translateY(-200%); }
+  100% { transform: translateY(-300%); }
+}
